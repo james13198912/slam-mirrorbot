@@ -211,9 +211,9 @@ def main():
         bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
         os.remove(".restartmsg")
     bot.set_my_commands(botcmds)
-    import AUTHORIZED_CHATS
+    import OWNER_ID
 
-    bot.send_message(AUTHORIZED_CHATS, "Bot Started")
+    bot.send_message(OWNER_ID, "Bot Started")
     start_handler = CommandHandler(BotCommands.StartCommand, start, run_async=True)
     ping_handler = CommandHandler(BotCommands.PingCommand, ping,
                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user, run_async=True)
